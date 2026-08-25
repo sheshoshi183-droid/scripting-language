@@ -1,0 +1,45 @@
+<!--
+4. Write a program to find whether the given number is even or odd.
+Logic:
+- If the number is divisible by 2 (i.e., the remainder when divided by 2 is 0), then it is an even number.
+- If the number is not divisible by 2 (i.e., the remainder when divided by 2 is not 0), then it is an odd number.       
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd Checker</title>
+
+    <script>
+        function checkEvenOdd() {
+            // Take input from user
+            let number = parseInt(prompt("Enter a number:"));
+
+            // Validate input
+            if (isNaN(number)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Check even or odd
+            if (number % 2 === 0) {
+                alert(number + " is an Even number.");
+            } else {
+                alert(number + " is an Odd number.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Even or Odd Checker</h2>
+    <button onclick="checkEvenOdd()">Check Number</button>
+
+</body>
+</html>
+<!-- KEY CONCEPTS:
+prompt() → to take user input
+parseInt() → convert input into integer
+% (modulus operator) → checks remainder
+if-else → decision making
+alert() → display result-->

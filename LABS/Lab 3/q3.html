@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Text Color</title>
+</head>
+<body>
+
+<h2 id="text">Hello JavaScript!</h2>
+
+<input type="color" id="colorPicker">
+
+<button onclick="changeColor()">
+    Change Color
+</button>
+
+<script>
+function changeColor() {
+
+    let color =
+        document.getElementById("colorPicker").value;
+
+    document.getElementById("text").style.color =
+        color;
+}
+//3. Write a program to change the color of text by picking color from the input
+//field.
+
+</script>
+
+</body>
+</html>

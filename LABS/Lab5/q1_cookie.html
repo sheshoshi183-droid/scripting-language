@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Example</title>
+</head>
+<body>
+
+<h2 id="greeting"></h2>
+
+<script>
+
+// Function to create a cookie
+function setCookie(name, value, days) {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+
+    let expires = "expires=" + date.toUTCString();
+
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to read a cookie
+function getCookie(name) {
+
+    let cookieName = name + "=";
+
+    let cookies = document.cookie.split(";");
+
+    for (let i = 0; i < cookies.length; i++) {
+
+        let c = cookies[i].trim();
+
+        if (c.indexOf(cookieName) == 0) {
+            return c.substring(cookieName.length);
+        }
+    }
+
+    return "";
+}
+
+// Check if cookie already exists
+let username = getCookie("username");
+
+if (username == "") {
+
+    username = prompt("Enter your name:");
+
+    if (username != "" && username != null) {
+        setCookie("username", username, 7);
+    }
+
+}
+
+document.getElementById("greeting").innerHTML =
+"Welcome, " + username + "!";
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Q3.Write a program to find the circumference of a circle with proper use
+of variables and appropriate formatting and coding conventions
+The formula for the circumference of a circle is given by:
+C=2πr
+where:
+C = circumference
+r = radius
+π ≈ 3.1416 (or Math.PI in JavaScript)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circumference of a Circle</title>
+
+    <script>
+        function calculateCircumference() {
+            // Get radius from user
+            let radius = parseFloat(prompt("Enter the radius of the circle:"));
+
+            // Validate input
+            if (isNaN(radius) || radius <= 0) {
+                alert("Please enter a valid positive number for radius.");
+                return;
+            }
+
+            // Calculate circumference
+            let circumference = 2 * Math.PI * radius;
+
+            // Display result with formatting
+            alert("Circumference of the circle is: " + circumference.toFixed(2));
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Circumference Calculator</h2>
+    <button onclick="calculateCircumference()">Calculate</button>
+
+</body>
+</html>

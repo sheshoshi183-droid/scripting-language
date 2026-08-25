@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form>
+
+<label>Name:</label>
+<input type="text" id="name"><br><br>
+
+<label>Email:</label>
+<input type="text" id="email"><br><br>
+
+<label>Password:</label>
+<input type="password" id="password"><br><br>
+
+<label>Confirm Password:</label>
+<input type="password" id="confirmPassword"><br><br>
+
+<button type="button" onclick="validateForm()">Register</button>
+
+<p id="message" style="color:red;"></p>
+
+</form>
+
+<script>
+
+function validateForm(){
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(name == ""){
+        document.getElementById("message").innerHTML =
+        "Name cannot be empty.";
+        return;
+    }
+
+    if(!emailPattern.test(email)){
+        document.getElementById("message").innerHTML =
+        "Please enter a valid email address.";
+        return;
+    }
+
+    if(password.length < 8){
+        document.getElementById("message").innerHTML =
+        "Password must be at least 8 characters long.";
+        return;
+    }
+
+    if(password !== confirmPassword){
+        document.getElementById("message").innerHTML =
+        "Passwords do not match.";
+        return;
+    }
+
+    document.getElementById("message").style.color = "green";
+    document.getElementById("message").innerHTML =
+    "Registration Successful.";
+
+}
+
+</script>
+
+</body>
+</html>

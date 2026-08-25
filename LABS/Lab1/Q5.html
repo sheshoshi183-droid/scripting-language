@@ -1,0 +1,32 @@
+<!-- 5. Write a program to display the multiplication table of 7 using JavaScript. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table of 7</title>
+
+    <script>
+        function showTable() {
+            let number = 7;
+            let result = "";
+
+            for (let i = 1; i <= 10; i++) {
+                result += number + " x " + i + " = " + (number * i) + "\n";
+            }
+
+            alert(result);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Multiplication Table of 7</h2>
+    <button onclick="showTable()">Show Table</button>
+
+</body>
+</html>
+<!-- KEY CONCEPTS:
+- number = 7 → fixed table number   
+- for loop runs from 1 to 10
+- Each iteration calculates 7 × i       
+- Results are stored in a string and displayed using alert() -->

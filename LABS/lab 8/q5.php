@@ -1,0 +1,28 @@
+<?php
+class Person {
+    public $name;
+    public $age;
+
+    function displayPerson() {
+        echo "Name: $this->name<br>";
+        echo "Age: $this->age<br>";
+    }
+}
+
+class Student extends Person {
+    public $course;
+
+    function displayStudent() {
+        $this->displayPerson();
+        echo "Course: $this->course<br>";
+    }
+}
+
+$student = new Student();
+
+$student->name = "Ram";
+$student->age = 20;
+$student->course = "BCA";
+
+$student->displayStudent();
+?>
